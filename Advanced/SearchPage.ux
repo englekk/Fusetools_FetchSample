@@ -6,6 +6,8 @@
     <DockPanel Background="#ccc">
         <DockPanel ux:Name="topPanel" Dock="Top" Background="#333">
             <TextInput ux:Name="text" PlaceholderText="Input here" PlaceholderColor="#777" Padding="10" TextColor="#fff" CaretColor="#fff" Dock="Fill" Value="{searchText}">
+                <OnKeyPress Key="Enter" Handler="{search}" />
+                
                 <Rectangle Layer="Background" Margin="4">
                     <Stroke Width="2" Brush="#fff" />
                 </Rectangle>
