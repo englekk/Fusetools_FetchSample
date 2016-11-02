@@ -1,0 +1,21 @@
+<!--[[
+    작성자: 원강민
+    블로그: https://blog.wonhada.com
+    퓨즈 커뮤니티: https://www.facebook.com/groups/fusetools/
+]]-->
+
+<App>
+    <StatusBarBackground />
+    <Fuse.iOS.StatusBarConfig Style="Light"/>
+
+    <Font ux:Global="KoreanFont" File="malgun.ttf" />
+    <Router ux:Name="router" />
+
+    <Navigator DefaultTemplate="searchPage">
+        <!-- 검색 페이지 -->
+        <SearchPage ux:Template="searchPage" router="router" />
+
+        <!-- 상세보기 페이지 -->
+        <DetailPage ux:Template="detailPage" router="router" />
+    </Navigator>
+</App>

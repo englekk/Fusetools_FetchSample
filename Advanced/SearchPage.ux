@@ -1,0 +1,32 @@
+<Page ux:Class="SearchPage">
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="./js/SearchPage.js" />
+
+    <DockPanel Background="#ccc">
+        <DockPanel ux:Name="topPanel" Dock="Top" Background="#333">
+            <TextInput ux:Name="text" PlaceholderText="Input here" PlaceholderColor="#777" Padding="10" TextColor="#fff" CaretColor="#fff" Dock="Fill" Value="{searchText}">
+                <Rectangle Layer="Background" Margin="4">
+                    <Stroke Width="2" Brush="#fff" />
+                </Rectangle>
+            </TextInput>
+            <Basic.Button Text="Search" Dock="Right">
+                <Clicked>
+                    <Set searchSV.ScrollPosition="0,0" />
+                    <Callback Handler="{search}" />
+                </Clicked>
+            </Basic.Button>
+        </DockPanel>
+
+        <ScrollView ux:Name="searchSV">
+            <StackPanel>
+                <Each Items="{items}">
+                    <DockPanel Padding="10" Background="#fff" Clicked="{showDetailPage}">
+                        <Image Url="{cover_l_url}" Dock="Left" />
+                        <Text Value="{title}" Font="KoreanFont" Dock="Fill" Width="60%" Margin="10" Alignment="CenterLeft" TextWrapping="Wrap" />
+                    </DockPanel>
+                </Each>
+            </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</Page>

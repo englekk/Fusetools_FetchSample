@@ -1,0 +1,12 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+  	"Fuse",
+  	"Fuse.BasicTheme",
+  	"FuseJS"
+  ],
+  "Includes": [
+    "*",
+    "js/CommonData.js:Bundle"
+  ]
+}

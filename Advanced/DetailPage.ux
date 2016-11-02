@@ -1,0 +1,34 @@
+<Page ux:Class="DetailPage">
+    <Router ux:Dependency="router" />
+
+    <JavaScript File="./js/DetailPage.js" />
+    
+    <DockPanel Background="#fff">
+        <DockPanel ux:Name="topPanel" Dock="Top" Background="#333">
+            <Basic.Button Text="&lt; Back" Dock="Left">
+                <Clicked>
+                    <Callback Handler="{goBack}" />
+                    <Set detailSV.ScrollPosition="0,0" Delay="1" />
+                </Clicked>
+            </Basic.Button>
+        </DockPanel>
+
+        <ScrollView ux:Name="detailSV" Dock="Fill">
+            <StackPanel>
+                <Image Url="{selectedItem.cover_l_url}" />
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <Text Value="Title: " Font="KoreanFont" />
+                    <Text Value="{selectedItem.title}" Font="KoreanFont" Width="300" TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <Text Value="Price: " Font="KoreanFont" />
+                    <Text Value="{selectedItem.sale_price}" Font="KoreanFont" Width="300" TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Margin="10" Orientation="Horizontal">
+                    <Text Value="Description: " Font="KoreanFont" />
+                    <Text Value="{selectedItem.description}" Font="KoreanFont" Width="250" TextWrapping="Wrap" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollView>
+    </DockPanel>
+</Page>
